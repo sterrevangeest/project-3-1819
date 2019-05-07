@@ -1,0 +1,54 @@
+<!-- views/pages/index.ejs -->
+
+<!DOCTYPE html>
+<html>
+  <head>
+      <% include ../partials/head %>
+  </head>
+  <body>
+    <header>
+        <% include ../partials/header %>
+    </header>
+    <main>
+      <section class="chatList">
+        <h2>Chats</h2>
+        <ul>
+          <li>
+            <a href="#">Chat #1</a>
+          </li>
+          <li>
+            <a href="#">Chat #1</a>
+          </li>
+          <li>
+            <a href="#">Chat #1</a>
+          </li>
+          <li>
+            <a href="#">Chat #1</a>
+          </li>
+          <li>
+            <a href="#">Chat #1</a>
+          </li>
+        </ul>
+      </section>
+      <section class="chat">
+        <h2>Chat</h2>
+        <ul id="messages"></ul>
+          <%# <form action="">
+            <input id="m" autocomplete="off" /><button>Send</button>
+          </form> %>
+          <form>
+            <textarea id="input-message" name="message" placeholder="Schrijf een bericht..."></textarea>
+            <div>
+                <button>+</button>
+                <button type="submit">
+                  <span>Versturen</span>
+                </button>
+            </div>
+          </form>
+      </section>
+      <section class="form">
+        <h2>Formulier</h2>
+      </section>
+    </main>
+  </body>
+</html>

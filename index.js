@@ -8,7 +8,8 @@ let ejs = require("ejs");
 require("dotenv").config();
 
 app.set("view engine", "ejs");
+app.use(express.static("static"));
 
-app.get("/", (req, res) => res.send("Hello World!"));
+app.get("/", (req, res) => res.render("../views/pages/index.ejs"));
 
 app.listen(port, () => console.log(`Example app listening on port ${port}!`));
