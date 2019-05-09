@@ -3,6 +3,7 @@ body {
   margin: 0;
   color: #3e3d42;
   overflow-y: hidden;
+  font-size: 14px;
 }
 
 header {
@@ -35,6 +36,17 @@ h2 {
   display: none;
 }
 
+.overlay.active {
+  background: rgba(0, 0, 0, 0.8);
+  opacity: 0.8;
+  filter: alpha(opacity=80);
+  position: absolute;
+  top: 0px;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  z-index: 1;
+}
 .chatList {
   background-color: #f0f0f2;
   max-width: 20vw;
@@ -56,18 +68,33 @@ h2 {
   display: block;
   padding: 1em 2em;
 }
+
 .chat {
   position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.chat .messages {
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+.chat h3 {
+  padding: 1em 2em;
+  font-size: 1em;
+  border-bottom: 0.04em solid #e3e3e6;
+  margin: 0;
 }
 
 .chat form {
-  position: relative;
-  top: 77vh;
   display: flex;
   justify-content: space-between;
   width: 100%;
   border-top: 0.04em solid #e3e3e6;
   padding-top: 0.5em;
+  background-color: white;
 }
 
 .chat form button,
@@ -79,6 +106,7 @@ h2 {
 }
 
 .chat form textarea {
+  padding-left: 2em;
 }
 
 .chat button {
@@ -87,22 +115,133 @@ h2 {
   color: inherit;
 }
 
-.chat button:last-of-type {
+.chat .send {
   background-color: #1dd361;
   color: white;
-  margin-right: 1em;
+  margin-right: 2em;
 }
 
-.chat button:first-of-type {
+.chat .plusButton {
   border: 0.04em solid #e3e3e6;
   margin-right: 0.3em;
+  font-weight: 800;
+  color: grey;
+}
+
+.chat .plusButton:hover {
+  background-color: #3a96fb;
+  color: white;
 }
 
 .chat textarea {
-  width: 70%;
+  width: 60%;
   resize: none;
+}
+
+#messages {
+  width: 95%;
+  list-style-type: none;
+  padding: 1em;
+  margin: 0;
+  z-index: -2;
+}
+
+#messages li {
+  border-radius: 1em;
+  margin-top: 0.5em;
+  padding: 1em;
+  border-bottom-left-radius: 0;
+  background: #eee;
 }
 
 .form {
   max-width: 30vw;
+  padding: 2em;
+  font-size: 14px;
+}
+
+.form div {
+  margin: 1em 0;
+}
+
+form label {
+  display: block;
+  margin-bottom: 0.5em;
+}
+
+form input {
+  font-family: inherit;
+  font-size: inherit;
+  padding: 0.5em;
+  border: 0.04em solid #e3e3e6;
+  border-radius: 0.1em;
+  width: 95%;
+}
+
+.options {
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-flow: nowrap;
+  text-align: center;
+  justify-content: space-between;
+  align-items: stretch;
+}
+
+.options label {
+  flex-grow: 1;
+  padding: 0.5em 1em;
+  border: 0.04em solid #e3e3e6;
+}
+
+.options label:hover {
+  background-color: #e3e3e6;
+}
+
+form .options input {
+  display: none;
+}
+
+.tasks {
+  display: none;
+}
+
+.tasks.active {
+  display: block;
+  border-radius: 0.4em;
+  position: absolute;
+  bottom: 6em;
+  right: 9em;
+  z-index: 1;
+  box-shadow: 1px 3px 10px 0.1px rgba(0, 0, 0, 0.1);
+}
+
+.tasks button {
+  display: block;
+  width: 100%;
+  background-color: white;
+  text-align: left;
+}
+
+.tasks button:hover {
+  background-color: #f0f0f2;
+}
+
+.popup {
+  display: none;
+}
+
+.popup.active {
+  display: block;
+  position: absolute;
+  background: white;
+  padding: 40px;
+  width: auto;
+  max-width: 500px;
+  margin: 20px auto;
+  z-index: 10;
+}
+
+.popup form label:hover {
+  background-color: white;
 }

@@ -1,0 +1,80 @@
+<!-- views/pages/index.ejs -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="/test.css">
+</head>
+<body>
+  <section class="chat">
+      <h2>Chat</h2>
+      <div class="">
+          <h3>Chat #1</h3>
+      </div>
+      <div class="messages">
+          <ul id="messages">
+              <li>Hey</li>
+          </ul>
+      </div>
+      <form class="chat" action="">
+          <textarea id="input-message" name="message" placeholder="Schrijf een bericht..."></textarea>
+          <div>
+              <div class="tasks">
+                  <%# <button type="button" name="button">Bedrijven voorstellen</button> %>
+                  <%# <button type="button" name="button">Privacy bericht versturen</button> %>
+              </div>
+              <button class="send" type="submit">
+                  <span>Versturen</span>
+              </button>
+          </div>
+      </form>
+      <form class="specialMessage" action="specialMessages" method="post">
+        <%# <label for="reisvoorkeuren"></label>
+        <input type="text" name="reisvoorkeuren" value=""> %>
+        <button type="submit" class="reisvoorkeuren">Reisvoorkeuren vragen</button>
+      </form>
+  </section>
+  <section class="form">
+      <h2>Formulier</h2>
+      <form class="" action="" method="post">
+          <div class="q">
+              <label>Woonplaats</label>
+              <input type="text" name="" value="">
+          </div>
+          <div class="q">
+              <label for="transport">Vervoersmiddel
+                  <div class="options">
+                      <label for="fiets">Fiets</label>
+                      <label for="auto">Auto</label>
+                      <label for="ov">OV</label>
+                      <label for="lopend">Lopend</label>
+                      <input type="checkbox" name="transport" id="fiets" value="fiets">
+                      <input type="checkbox" name="transport" id="auto" value="auto">
+                      <input type="checkbox" name="transport" id="ov" value="ov">
+                      <input type="checkbox" name="transport" id="lopend" value="lopend">
+                  </div>
+              </label>
+          </div>
+          <div class="q">
+              <label for="traveltime"> Reistijd
+                  <div class="options">
+                      <label for="fiets">-15 min</label>
+                      <label for="auto">15 tot 45 min</label>
+                      <label for="ov">45 - 60 min</label>
+                      <label for="lopend">60+ min</label>
+                      <input name="traveltime" type="checkbox" id="15" value="15">
+                      <input name="traveltime" type="checkbox" id="45" value="45">
+                      <input name="traveltime" type="checkbox" id="60" value="60">
+                      <input name="traveltime" type="checkbox" id="60+" value="60+">
+                  </div>
+              </label>
+          </div>
+          <button type="button" name="button">submit</button>
+      </form>
+  </section>
+</body>
+<script src="/socket.io/socket.io.js"></script>
+<script src="https://code.jquery.com/jquery-1.11.1.js"></script>
+<script src="/index.js"></script>
+
+</html>

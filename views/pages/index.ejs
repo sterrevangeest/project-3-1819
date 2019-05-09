@@ -2,53 +2,143 @@
 
 <!DOCTYPE html>
 <html>
-  <head>
-      <% include ../partials/head %>
-  </head>
-  <body>
+<head>
+    <% include ../partials/head %>
+</head>
+<body>
+    <div class="overlay" id="overlay">
+    </div>
     <header>
         <% include ../partials/header %>
     </header>
     <main>
-      <section class="chatList">
-        <h2>Chats</h2>
-        <ul>
-          <li>
-            <a href="#">Chat #1</a>
-          </li>
-          <li>
-            <a href="#">Chat #1</a>
-          </li>
-          <li>
-            <a href="#">Chat #1</a>
-          </li>
-          <li>
-            <a href="#">Chat #1</a>
-          </li>
-          <li>
-            <a href="#">Chat #1</a>
-          </li>
-        </ul>
-      </section>
-      <section class="chat">
-        <h2>Chat</h2>
-        <ul id="messages"></ul>
-          <%# <form action="">
-            <input id="m" autocomplete="off" /><button>Send</button>
-          </form> %>
-          <form>
-            <textarea id="input-message" name="message" placeholder="Schrijf een bericht..."></textarea>
-            <div>
-                <button>+</button>
-                <button type="submit">
-                  <span>Versturen</span>
-                </button>
+        <div class="popup">
+            <h2>Popup content</h2>
+            <h3>Form</h3>
+            <form class="" action="index.html" method="post">
+                <div class="q">
+                    <label>Stuur een bericht mee</label>
+                    <input type="text" name="message" value="">
+                </div>
+                <div class="q">
+                    <label for=""> Vervoersmiddel
+                        <div class="options">
+                            <label for="fiets">Fiets</label>
+                            <label for="auto">Auto</label>
+                            <label for="ov">OV</label>
+                            <label for="lopend">Lopend</label>
+                            <input type="checkbox" name="transport" id="fiets" value="fiets" =>
+                            <input type="checkbox" name="transport" id="auto" value="auto">
+                            <input type="checkbox" name="transport" id="ov" value="ov">
+                            <input type="checkbox" name="transport" id="lopend" value="lopend">
+                        </div>
+                    </label>
+                </div>
+                <div class="q">
+                    <label for=""> Reistijd
+                        <div class="options">
+                            <label for="fiets">-15 min</label>
+                            <label for="auto">15 tot 45 min</label>
+                            <label for="ov">45 - 60 min</label>
+                            <label for="lopend">60+ min</label>
+                            <input name="traveltime" type="checkbox" id="fiets" value="fiets">
+                            <input name="traveltime" type="checkbox" id="auto" value="auto">
+                            <input name="traveltime" type="checkbox" id="ov" value="ov">
+                            <input name="traveltime" type="checkbox" id="lopend" value="lopend">
+                        </div>
+                    </label>
+                </div>
+                <button type="button" name="button">Annuleren</button>
+                <button type="button" name="button">Verstuur</button>
+            </form>
+        </div>
+        <section class="chatList">
+            <h2>Chats</h2>
+            <ul>
+                <li>
+                    <a href="#">Chat #1</a>
+                </li>
+                <li>
+                    <a href="#">Chat #1</a>
+                </li>
+                <li>
+                    <a href="#">Chat #1</a>
+                </li>
+                <li>
+                    <a href="#">Chat #1</a>
+                </li>
+                <li>
+                    <a href="#">Chat #1</a>
+                </li>
+            </ul>
+        </section>
+        <section class="chat">
+            <h2>Chat</h2>
+            <div class="">
+                <h3>Chat #1</h3>
             </div>
-          </form>
-      </section>
-      <section class="form">
-        <h2>Formulier</h2>
-      </section>
+            <div class="messages">
+                <ul id="messages">
+                    <li>Hey</li>
+                </ul>
+            </div>
+            <form action="">
+                <textarea id="input-message" name="message" placeholder="Schrijf een bericht..."></textarea>
+                <div>
+                    <button type="button" class="plusButton">+</button>
+                    <div class="tasks">
+                        <button type="button" name="button">Bedrijven voorstellen</button>
+                        <button type="button" class="reisvoorkeuren">Reisvoorkeuren vragen</button>
+                        <button type="button" name="button">Privacy bericht versturen</button>
+                    </div>
+                    <button class="send" type="submit">
+                        <span>Versturen</span>
+                    </button>
+                </div>
+            </form>
+        </section>
+        <section class="form">
+            <h2>Formulier</h2>
+            <form class="" action="index.html" method="post">
+                <div class="q">
+                    <label>Woonplaats</label>
+                    <input type="text" name="" value="">
+                </div>
+                <div class="q">
+                    <label for="">Vervoersmiddel
+                        <div class="options">
+                            <label for="fiets">Fiets</label>
+                            <label for="auto">Auto</label>
+                            <label for="ov">OV</label>
+                            <label for="lopend">Lopend</label>
+                            <input type="checkbox" name="transport" id="fiets" value="fiets">
+                            <input type="checkbox" name="transport" id="auto" value="auto">
+                            <input type="checkbox" name="transport" id="ov" value="ov">
+                            <input type="checkbox" name="transport" id="lopend" value="lopend">
+                        </div>
+                    </label>
+                </div>
+                <div class="q">
+                    <label for=""> Reistijd
+                        <div class="options">
+                            <label for="fiets">-15 min</label>
+                            <label for="auto">15 tot 45 min</label>
+                            <label for="ov">45 - 60 min</label>
+                            <label for="lopend">60+ min</label>
+                            <input name="traveltime" type="checkbox" id="fiets" value="fiets">
+                            <input name="traveltime" type="checkbox" id="auto" value="auto">
+                            <input name="traveltime" type="checkbox" id="ov" value="ov">
+                            <input name="traveltime" type="checkbox" id="lopend" value="lopend">
+                        </div>
+                    </label>
+                </div>
+                <button type="button" name="button">submit</button>
+            </form>
+        </section>
     </main>
-  </body>
+</body>
+<script src="/socket.io/socket.io.js"></script>
+<script src="https://code.jquery.com/jquery-1.11.1.js"></script>
+<script src="/index.js"></script>
+
 </html>
