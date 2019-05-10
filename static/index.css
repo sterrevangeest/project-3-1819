@@ -94,7 +94,7 @@ h2 {
   width: 100%;
   border-top: 0.04em solid #e3e3e6;
   padding-top: 0.5em;
-  background-color: white;
+  //background-color: white;
 }
 
 .chat form button,
@@ -123,9 +123,11 @@ h2 {
 
 .chat .plusButton {
   border: 0.04em solid #e3e3e6;
-  margin-right: 0.3em;
+  //  margin-right: 0.3em;
   font-weight: 800;
   color: grey;
+  margin-left: 1em;
+  margin-bottom: 0.5em;
 }
 
 .chat .plusButton:hover {
@@ -139,11 +141,12 @@ h2 {
 }
 
 #messages {
-  width: 95%;
+  width: 45%;
   list-style-type: none;
   padding: 1em;
   margin: 0;
   z-index: -2;
+  text-align: left;
 }
 
 #messages li {
@@ -198,9 +201,9 @@ form input {
   background-color: #e3e3e6;
 }
 
-form .options input {
+/* form .options input {
   display: none;
-}
+} */
 
 .tasks {
   display: none;
@@ -244,4 +247,82 @@ form .options input {
 
 .popup form label:hover {
   background-color: white;
+}
+
+.specialMessageAntwoord {
+  display: flex;
+  flex-direction: column;
+  border-color: #eee;
+}
+
+.specialMessageAntwoord div label {
+  display: block;
+}
+
+.specialMessageAntwoord div {
+  background-color: #eee;
+  //width: 150%;
+}
+
+.specialMessageAntwoord button {
+  display: block;
+}
+
+.formchat {
+  width: 150%;
+}
+
+.formchat label label {
+  background-color: white;
+  border: none;
+}
+
+ul li {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+ul {
+  padding: 0;
+}
+
+input:checked + label {
+  background-color: #408cfb;
+  color: #fff;
+  border-color: white;
+  font-style: normal;
+}
+
+.red {
+  color: red;
+}
+.green {
+  color: green;
+}
+
+.chatbutton {
+  background-color: #ffd259;
+}
+
+.bedrijven li {
+  padding: 0.5em 0;
+  border-bottom: 0.04em solid #e3e3e6;
+  font-weight: 800;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.bedrijven span {
+  padding: 1em;
+  font-weight: 400;
+  color: grey;
+}
+
+.q {
+  border-bottom: 0.04em solid #e3e3e6;
+}
+
+.specialMessage {
+  display: block !important;
 }

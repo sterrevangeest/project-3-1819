@@ -79,60 +79,80 @@
             </div>
             <div class="messages">
                 <ul id="messages">
-                    <li>Hey</li>
+                    <!-- <li>perspiciatis deserunt dignissimos sit rerum sed voluptas qui</li> -->
+                    <!-- <li>ipsa commodi deleniti corporis eius facilis rerum vitae</li> -->
+                    <!-- <li>vel quis culpa reiciendis incidunt natus porro minima</li> -->
+                    <li>perspiciatis deserunt dignissimos sit rerum sed voluptas qui</li>
+                    <li>ipsa commodi deleniti corporis eius facilis rerum vitae</li>
+                    <li>Hoi!</li>
+                    <li>Leuk dat je interesse hebt in Huisvuilcentrale Noord-Holland. Mag ik je er meer over vertellen?</li>
+                    <li>Wij willen graag je toestemming voor het opslaan van deze gegevens. Je kunt er meer over lezen op onze website.</li>
                 </ul>
             </div>
+            <div class="">
+
+
             <form action="">
                 <textarea id="input-message" name="message" placeholder="Schrijf een bericht..."></textarea>
                 <div>
-                    <button type="button" class="plusButton">+</button>
-                    <div class="tasks">
-                        <button type="button" name="button">Bedrijven voorstellen</button>
-                        <button type="button" class="reisvoorkeuren">Reisvoorkeuren vragen</button>
-                        <button type="button" name="button">Privacy bericht versturen</button>
-                    </div>
                     <button class="send" type="submit">
                         <span>Versturen</span>
                     </button>
                 </div>
             </form>
+            <form class="specialMessage" action="specialMessages" method="post">
+              <%# <label for="reisvoorkeuren"></label>
+              <input type="text" name="reisvoorkeuren" value=""> %>
+              <button class="plusButton" type="submit" class="reisvoorkeuren">Reisvoorkeuren vragen</button>
+              <button class="plusButton" type="" class="">Bedrijven voorstellen</button>
+
+            </form>
+                  </div>
         </section>
         <section class="form">
             <h2>Formulier</h2>
-            <form class="" action="index.html" method="post">
+            <form class="intermediarForm" action="" method="post">
                 <div class="q">
                     <label>Woonplaats</label>
-                    <input type="text" name="" value="">
+                    <input type="text" name="" value="Wibautstraat 2, 1091 GC Amsterdam">
                 </div>
                 <div class="q">
-                    <label for="">Vervoersmiddel
+                    <label for="transport">Vervoersmiddel
                         <div class="options">
-                            <label for="fiets">Fiets</label>
-                            <label for="auto">Auto</label>
-                            <label for="ov">OV</label>
-                            <label for="lopend">Lopend</label>
-                            <input type="checkbox" name="transport" id="fiets" value="fiets">
-                            <input type="checkbox" name="transport" id="auto" value="auto">
-                            <input type="checkbox" name="transport" id="ov" value="ov">
-                            <input type="checkbox" name="transport" id="lopend" value="lopend">
+                          <input name="transport" type="checkbox" id="fiets" value="fiets">
+                          <label for="fiets">Fiets</label>
+                          <input name="transport" type="checkbox" id="auto" value="auto">
+                          <label for="auto">Auto</label>
+                          <input name="transport" type="checkbox" id="ov" value="ov">
+                          <label for="ov">OV</label>
+                          <input name="transport" type="checkbox" id="lopend" value="lopend">
+                          <label for="lopend">Lopend</label>
                         </div>
                     </label>
                 </div>
                 <div class="q">
-                    <label for=""> Reistijd
+                    <label for="traveltime"> Reistijd
                         <div class="options">
-                            <label for="fiets">-15 min</label>
-                            <label for="auto">15 tot 45 min</label>
-                            <label for="ov">45 - 60 min</label>
-                            <label for="lopend">60+ min</label>
-                            <input name="traveltime" type="checkbox" id="fiets" value="fiets">
-                            <input name="traveltime" type="checkbox" id="auto" value="auto">
-                            <input name="traveltime" type="checkbox" id="ov" value="ov">
-                            <input name="traveltime" type="checkbox" id="lopend" value="lopend">
+                            <input name="traveltime" type="checkbox" id="vijftien" value="15">
+                            <label for="vijftien">-15 min</label>
+                            <input name="traveltime" type="checkbox" id="vijfenveertig" value="45">
+                            <label for="vijfenveertig">15 tot 45 min</label>
+                            <input name="traveltime" type="checkbox" id="zestig" value="60">
+                            <label for="zestig">45 - 60 min</label>
+                            <input name="traveltime" type="checkbox" id="zestigplus" value="61">
+                            <label for="zestigplus">60+ min</label>
                         </div>
                     </label>
                 </div>
-                <button type="button" name="button">submit</button>
+                <div class="q">
+                  <label for="">Bedrijven</label>
+                  <ul class="bedrijven">
+                    <% bedrijven.forEach(function(bedrijf){ %>
+                    <li value= "<%=bedrijf.travelDuration%>"class=<%=bedrijf.travelDuration%>><%=bedrijf.bedrijfsnaam %> <span><%=bedrijf.travelDuration%> minuten</span> <span><%=bedrijf.travelDistance%> km</span> </li>
+                <%  }) %>
+                  </ul>
+                </div>
+                <!-- <button type="button" name="button">submit</button> -->
             </form>
         </section>
     </main>

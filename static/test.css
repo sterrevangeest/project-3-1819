@@ -1,26 +1,3 @@
-body {
-  font-family: lato;
-}
-
-h2 {
-  display: none;
-}
-
-body {
-  display: flex;
-}
-
-section {
-  margin: 1em;
-  width: 50%;
-  padding: 1em;
-  height: 90vh;
-}
-
-section:last-of-type {
-  background-color: lightgrey;
-}
-
 ul li {
   list-style-type: none;
   padding: 0;
@@ -30,22 +7,14 @@ ul {
   padding: 0;
 }
 
-.chat {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+input:checked + label {
+  color: #f00;
+  font-style: normal;
 }
 
-.chat form {
-  display: block;
+.red {
+  color: red;
 }
-
-textarea {
-  width: 100%;
-  height: 5em;
-}
-
-#messages {
-  background-color: lightblue;
-  padding: 1em;
+.green {
+  color: green;
 }
